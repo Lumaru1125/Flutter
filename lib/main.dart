@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
 
-main(List<String> args) {
-  // 1. runApp
-  runApp(
-      //2. MaterialApp
-      MaterialApp(
-    // home setting widget
-    home: Scaffold(
-        appBar: AppBar(
-          title: const Text("this is title"),
-        ),
-        body: const Text('hello World')),
-  ));
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "First app",
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: Text("First app")),
+        body: Center(
+          child: Column(
+            children: <Widget>[Text("Hello"), Text("Hello"), Text("hello")],
+          ),
+        ));
+  }
 }
