@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/screens/main_screen.dart';
 
-main(List<String> args) {
-  // 1. runApp
-  runApp(
-      //2. MaterialApp
-      MaterialApp(
-    // home setting widget
-    home: Scaffold(
-        appBar: AppBar(
-          title: const Text("this is title"),
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  const MyApp ({Key? key}) : super (key: key);
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      title: 'Chatting app',
+      theme: ThemeData(
+        primarySwatch: Colors.blue
         ),
-        body: const Text('hello World')),
-  ));
+        home: LoginSingupScreen(),
+    );
+  }
+
 }
